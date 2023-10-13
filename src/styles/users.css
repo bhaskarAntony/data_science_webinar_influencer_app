@@ -1,0 +1,27 @@
+/* .all-users{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+.form-control{
+    width: fit-content !important;
+}
+.user{
+    /* padding: 10px; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.user-card-header{
+    padding: 10px;
+    background-color: rgb(95, 42, 255);
+}
+.user-card-body{
+    padding: 10px;
+}
+
+small{
+    font-weight: 900;
+    color: #8235ff;
+    letter-spacing: 1px;
+}
