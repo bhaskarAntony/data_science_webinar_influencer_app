@@ -1,28 +1,35 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Loadingmodal from './Loadingmodal'
 import '../styles/users.css'
 
 function Users() {
   const [couponCode, setCouponCode] = useState('');
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+
 
   const checkCouponCode = (e) => {
     e.preventDefault();
+    setLoading(true);
     axios
       .get(`https://emerald-sockeye-tux.cyclic.app/api/confirm/get-user?couponCode=${couponCode}`)
       .then((response) => {
+        setLoading(false);   
         setUser(response.data);
         setError(null);
       })
       .catch((error) => {
         setError('User not found');
         setUser(null);
+    setLoading(false);
       });
   };
 
   return (
     <div>
+         {loading ? <Loadingmodal /> : null}
       <div className='text-center p-3'>
       <h1 className='mb-4'>Hello 👋 Influencer</h1>
        <div >
