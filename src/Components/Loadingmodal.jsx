@@ -8,7 +8,6 @@ const Loadingmodal = () => {
             <span className="visually-hidden">Loading...</span>
           </div>
           <p>Please Wait...</p>
-
         </div>
       </div>
     );
